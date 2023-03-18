@@ -5,7 +5,7 @@ using UnityEngine;
 using Core.Enums;
 
 namespace Core.Tools
-{
+{ 
     [Serializable]
     public class DirectionalCameraPair
     {
