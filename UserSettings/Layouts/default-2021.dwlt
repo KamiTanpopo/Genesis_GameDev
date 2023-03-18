@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1675.6362
     height: 852.6545
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5940
+  controlID: 105
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 5945
+  controlID: 60
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5946
+  controlID: 44
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,7 +355,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.436365}
+      snapOffset: {x: 0, y: 26.181818}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.854534, y: 0.1501653, z: -0.030816523}
+    m_Target: {x: -9.501491, y: 0.540228, z: 325.58478}
     speed: 2
-    m_Value: {x: -9.854534, y: 0.1501653, z: -0.030816523}
+    m_Value: {x: -9.501491, y: 0.540228, z: 325.58478}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.195467
+    m_Target: 8.880537
     speed: 2
-    m_Value: 5.195467
+    m_Value: 8.880537
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -669,9 +669,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0cee0000
-      m_LastClickedID: 60940
-      m_ExpandedIDs: d886feff1001ffff3c07ffff100dffff180dfffff022ffff2023ffff5629ffff8429ffffe830ffff3432ffff8e60ffff9660ffffa660ffffae60ffffb260ffffbe60ffffc260ffffc660ffffca60ffff5661ffff4666ffff9271ffff8095ffffcc95ffff52a1ffff56a1ffff5aa1ffff5ea1ffffe2a1fffff2a1ffffa2a4ffffa6a4ffffaaa4ffff2ea5ffff3ea5ffffb4b6ffffc0b6ffffc4b6ffffc8b6ffffccb6ffffb4b9ffffccb9ffffd0b9ffffd4b9ffffd8b9ffff5cbaffff62baffff64baffff60bbffffacbfffffa6c1ffffacc1ffffaec1ffff00c5ffff20c5ffff24c5ffff34c5ffff38c5ffff3cc5ffffc0c5ffffc6c5ffffc8c5ffffb4c9ffff00cbffff94a6000098a60000eaa60000a6ed00000cee000048ee0000
+      m_SelectedIDs: 9287ffff
+      m_LastClickedID: -30830
+      m_ExpandedIDs: 8089ffffc689ffffce89ffffde89ffffe689ffffea89fffff689fffffa89fffffe89ffff028affff868affff8a8affffbe8cffff0891ffff88faffff8cfaffff9cfaffffa0faffffa4faffff28fbffff2cfbffff985d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -924,18 +924,18 @@ MonoBehaviour:
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 57
   m_LastFolders:
   - Assets/Scripts
-  m_LastFoldersGridSize: -1
+  m_LastFoldersGridSize: 57
   m_LastProjectPath: "C:\\Users\\aleks\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GameDev\\Genesis_GameDev"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 65.618164}
-    m_SelectedIDs: 9e8c0000
-    m_LastClickedID: 35998
-    m_ExpandedIDs: 00000000aa890000b8890000628c0000868c00009e8c0000ce8c00008293000092990000e2990000c69d00004ea300009ca300009ca50000d6a50000dea5000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e05f0000
+    m_LastClickedID: 24544
+    m_ExpandedIDs: 00000000d85f0000da5f0000dc5f0000de5f0000e05f0000e45f0000e65f0000e85f0000ea5f0000ec5f0000ee5f0000f05f0000f25f0000f45f0000c6de0000ecde000026df000058df00006c10010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -963,7 +963,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa890000ce8c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000d85f0000da5f0000dc5f0000de5f0000e05f0000e25f0000e45f0000e65f0000e85f0000ea5f0000ec5f0000ee5f0000f05f0000f25f0000f45f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 57
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &18
@@ -1082,7 +1082,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 54
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
