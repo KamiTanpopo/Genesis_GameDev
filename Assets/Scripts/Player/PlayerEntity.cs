@@ -1,8 +1,7 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Core.Tools;
 using Core.Enums;
+using Core.Tools;
+using System;
+using UnityEngine;
 
 namespace Player
 {
@@ -11,6 +10,8 @@ namespace Player
 
     public class PlayerEntity : MonoBehaviour
     {
+        [SerializeField] private Animator _animator;
+
         [Header("HorizontalMovement")]
         [SerializeField] private float _horizontalSpeed;
         [SerializeField] private Direction _direction;
@@ -32,6 +33,7 @@ namespace Player
         [SerializeField] private DirectionalCameraPair _cameras;
 
         private Rigidbody2D _rigidbody;
+        private AnimationType _currentAnimationType;
 
         private float _sizeModificator;
         private bool _isJumping;
@@ -40,6 +42,8 @@ namespace Player
         private Vector2 _shadowLocalScale;
         private Color _shadowColor;
         private float _shadowVerticalPosition;
+
+        private Vector2 _movement;
 
         // Start is called before the first frame update
         private void Start()
@@ -59,10 +63,19 @@ namespace Player
         {
             if (_isJumping)
                 UpdateJump();
+
+            UpdateAnimations();
+        }
+        private void UpdateAnimations()
+        {
+            PlayAnimation(AnimationType.Idle, true);
+            PlayAnimation(AnimationType.Run, _movement.magnitude > 0);
+            PlayAnimation(AnimationType.Jump, _isJumping);
         }
 
         public void MoveHorizontally(float direction)
         {
+            _movement.x = direction;
             SetDirection(direction);
             Vector2 velocity = _rigidbody.velocity;
             velocity.x = direction * _horizontalSpeed;
@@ -73,6 +86,7 @@ namespace Player
             if (_isJumping)
                 return;
 
+            _movement.y = direction;
             Vector2 velocity = _rigidbody.velocity;
             velocity.y = direction * _verticalSpeed;
             _rigidbody.velocity = velocity;
@@ -106,7 +120,7 @@ namespace Player
 
         private void SetDirection(float direction)
         {
-            if ((_direction == Direction.Right && direction < 0) || (_direction == Direction.Left && direction > 0)) 
+            if ((_direction == Direction.Right && direction < 0) || (_direction == Direction.Left && direction > 0))
                 Flip();
         }
 
@@ -119,7 +133,7 @@ namespace Player
         }
         private void UpdateJump()
         {
-            if (_rigidbody.velocity.y < 0 && _rigidbody.position.y <= _startJumpVerticalPosition) 
+            if (_rigidbody.velocity.y < 0 && _rigidbody.position.y <= _startJumpVerticalPosition)
             {
                 ResetJump();
                 return;
@@ -138,6 +152,32 @@ namespace Player
             _shadow.transform.localPosition = _shadowLocalPosition;
             _shadow.transform.localScale = _shadowLocalScale;
             _shadow.color = _shadowColor;
+        }
+
+
+        private void PlayAnimation(AnimationType animationType, bool active)
+        {
+            if (!active)
+            {
+                if (_currentAnimationType == AnimationType.Idle || _currentAnimationType != animationType)
+                    return;
+
+                _currentAnimationType = AnimationType.Idle;
+                PlayAnimation(_currentAnimationType);
+                return;
+            }
+
+            if (_currentAnimationType >= animationType)
+                return;
+
+            _currentAnimationType = animationType;
+            PlayAnimation(_currentAnimationType);
+        }
+
+
+        private void PlayAnimation(AnimationType animationType)
+        {
+            _animator.SetInteger(nameof(AnimationType), (int)animationType);
         }
     }
 
