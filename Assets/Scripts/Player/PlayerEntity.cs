@@ -3,7 +3,7 @@ using Core.Tools;
 using System;
 using UnityEngine;
 
-namespace Player
+namespace Assets.Scripts.Player
 {
 
     [RequireComponent(typeof(Rigidbody2D))]
@@ -37,6 +37,7 @@ namespace Player
 
         private float _sizeModificator;
         private bool _isJumping;
+        private bool _isAttack;
         private float _startJumpVerticalPosition;
         private Vector2 _shadowLocalPosition;
         private Vector2 _shadowLocalScale;
@@ -45,7 +46,9 @@ namespace Player
 
         private Vector2 _movement;
 
-        // Start is called before the first frame update
+        private event Action ActionRequested;
+        private event Action AnimationEnded;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -71,6 +74,7 @@ namespace Player
             PlayAnimation(AnimationType.Idle, true);
             PlayAnimation(AnimationType.Run, _movement.magnitude > 0);
             PlayAnimation(AnimationType.Jump, _isJumping);
+            PlayAnimation(AnimationType.Attack, _isAttack);
         }
 
         public void MoveHorizontally(float direction)
@@ -110,7 +114,24 @@ namespace Player
             _startJumpVerticalPosition = transform.position.y;
             _shadowVerticalPosition = _shadow.transform.position.y;
         }
+        public void StartAttack()
+        {
+            _isAttack = true;
 
+            ActionRequested += Attack;
+            AnimationEnded += EndAttack;
+        }
+        private void Attack()
+        {
+            Debug.Log("Attack");
+        }
+        private void EndAttack()
+        {
+            ActionRequested -= Attack;
+            AnimationEnded -= EndAttack;
+
+            _isAttack = false;
+        }
         private void UpdateSize()
         {
             float verticalDelta = _maxVerticalPosition - transform.position.y;
@@ -154,31 +175,32 @@ namespace Player
             _shadow.color = _shadowColor;
         }
 
-
-        private void PlayAnimation(AnimationType animationType, bool active)
+        private bool PlayAnimation(AnimationType animationType, bool active)
         {
             if (!active)
             {
                 if (_currentAnimationType == AnimationType.Idle || _currentAnimationType != animationType)
-                    return;
+                    return false;
 
                 _currentAnimationType = AnimationType.Idle;
                 PlayAnimation(_currentAnimationType);
-                return;
+                return false;
             }
 
             if (_currentAnimationType >= animationType)
-                return;
+                return false;
 
             _currentAnimationType = animationType;
             PlayAnimation(_currentAnimationType);
+            return true;
         }
-
 
         private void PlayAnimation(AnimationType animationType)
         {
             _animator.SetInteger(nameof(AnimationType), (int)animationType);
         }
+        protected void OnActionRequested() => ActionRequested?.Invoke();
+        protected void OnAnimationEnded() => AnimationEnded?.Invoke();
     }
 
 }

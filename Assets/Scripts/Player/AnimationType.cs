@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Player
+namespace Assets.Scripts.Player
 {
     public enum AnimationType
     {
