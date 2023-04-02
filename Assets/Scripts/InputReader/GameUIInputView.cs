@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Player
+namespace Assets.Scripts.InputReader
 {
     public class GameUIInputView : MonoBehaviour, IEntityInputSource
     {

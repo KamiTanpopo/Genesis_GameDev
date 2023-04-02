@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Player
+﻿namespace Assets.Scripts.InputReader
 {
     public interface IEntityInputSource
     {

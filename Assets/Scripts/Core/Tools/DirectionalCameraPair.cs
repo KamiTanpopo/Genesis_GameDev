@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
-using Core.Enums;
+using Assets.Scripts.Core.Enums;
 
-namespace Core.Tools
+namespace Assets.Scripts.Core.Tools
 { 
     [Serializable]
     public class DirectionalCameraPair
@@ -30,5 +30,4 @@ namespace Core.Tools
             }
         }
     }
-
 }

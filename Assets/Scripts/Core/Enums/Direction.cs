@@ -1,4 +1,4 @@
-﻿namespace Core.Enums
+﻿namespace Assets.Scripts.Core.Enums
 {
 	public enum Direction
 	{
